@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: blue;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NUESTRA UBICACION</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html.html">Servicios</a>
+            <a href="nosotros.html.html">Nosotros</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Ubicación</h2>
+        <p><strong>Dirección:</strong>Ciudad, Potosi,tupiza</p>
+        <p><strong>Teléfono:</strong> 68412601</p>
+        <p><strong>Horario:</strong></p>
+        <ul>
+            <li>Lunes a Viernes: 8:00 AM - 6:00 PM</li>
+            <li>Sábado: 8:00 AM - 6:00 PM</li>
+            <li>sabado: 8:00 AM - 6:00 PM</li>
+        </ul>
+        <p>¡Visítanos para descubrir nuestros productos y ofertas especiales!</p>
+        <a href="mailto:contacto@tiendaxyz.com" class="contact-button">Contáctanos</a>
+        <div id="map"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 </p>
+    </footer>
+
+    <script>
+        function initMap() {
+            const location = { lat: -34.397, lng: 150.644 }; // Cambia a las coordenadas de tu tienda
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap"></script>
+</body>
+</html>
